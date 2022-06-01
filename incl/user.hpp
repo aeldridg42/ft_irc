@@ -99,7 +99,6 @@ public:
 	void 							set_mode(UserMode, std::string nick, std::string change);
 	void 							unset_mode(UserMode, std::string nick, std::string change);
 	bool							has_mode(UserMode) const;
-	std::string						show_mode() const;
 };
 
 #endif

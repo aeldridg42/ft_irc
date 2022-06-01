@@ -121,21 +121,6 @@ bool Channel::has_mode(Mode flag) const {
 	return ((_modes & flag) == flag);
 }
 
-// {[+|-]|o|p|s|i|t|n|b|v}
-std::string Channel::show_mode() const {
-	std::string show;
-	if (has_mode(oper))
-		show += 'o';
-	if (has_mode(invite_only))
-		show += 'i';
-	if (has_mode(protectedTopic))
-		show += 't';
-	if (has_mode(limited))
-		show += "l " + std::to_string(_limit);
-
-	return show.empty() ? "" : '+' + show;
-}
-
 void Channel::add_operator(User *user, std::string nick)
 {
 	for (unsigned int i = 0; i < operators.size(); i++)

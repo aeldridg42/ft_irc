@@ -54,7 +54,6 @@ public:
 	void							set_mode(Mode, std::string nick, std::string change);
 	void							unset_mode(Mode, std::string nick, std::string change);
 	bool							has_mode(Mode) const;
-	std::string						show_mode() const;
 };
 
 #endif

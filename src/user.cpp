@@ -157,17 +157,3 @@ void User::unset_mode(UserMode flag, std::string nick, std::string change) {
 bool User::has_mode(UserMode flag) const {
 	return ((_modes & flag) == flag);
 }
-
-// {[+|-]i|s|o|w}
-std::string User::show_mode() const {
-	std::string show;
-	if (has_mode(UserOper))
-		show += 'o';
-	if (has_mode(wallopsOff))
-		show += 'w';
-	if (has_mode(silence))
-		show += 's';
-	if (has_mode(invisibility))
-		show += 'i';
-	return show.empty() ? "" : '+' + show;
-}
